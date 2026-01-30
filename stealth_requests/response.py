@@ -37,9 +37,6 @@ class StealthResponse:
     def __getattr__(self, name):
         return getattr(self._response, name)
 
-    def __repr__(self):
-        return f'<StealthResponse [Status: {self._response.status_code} Elapsed Time: {self._response.elapsed:.2f} seconds]>'
-
     def _get_tree(self) -> HtmlElement:
         try:
             from lxml import html
